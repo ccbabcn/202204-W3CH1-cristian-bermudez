@@ -10,6 +10,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "import/extensions": "off",
     "lines-between-class-members": [
       "error",
       "always",
