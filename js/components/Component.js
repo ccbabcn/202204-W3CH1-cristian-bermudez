@@ -1,14 +1,10 @@
-// import personajes from "./personajes.js";
-
 class Component {
-  character;
+  element;
 
-  constructor(character, parentElement, tag, nameClass) {
-    this.character = character;
+  constructor(parentElement, tag, nameClass) {
     this.element = document.createElement(tag);
     this.element.className = nameClass;
-    this.parentElement = parentElement;
-    parentElement.appendChild(this.element);
+    parentElement.append(this.element);
   }
 }
 
