@@ -1,8 +1,8 @@
 import Component from "./Component.js";
-import Asesor from "../modules/Asesor.js";
-import Escudero from "../modules/Escudero.js";
-import Luchador from "../modules/Luchador.js";
-import Rey from "../modules/Rey.js";
+import Asesor from "../characters/Asesor.js";
+import Escudero from "../characters/Escudero.js";
+import Luchador from "../characters/Luchador.js";
+import Rey from "../characters/Rey.js";
 
 class Card extends Component {
   constructor(parentElement, character, nameClass) {
@@ -12,7 +12,6 @@ class Card extends Component {
     this.render();
     this.myEmoji();
     this.mySkills();
-    this.dieButton();
   }
 
   mySkills() {
@@ -89,7 +88,7 @@ class Card extends Component {
                   ${this.mySkills()}
                 </ul>
                 <div class="character__actions">
-                ${this.dieButton}
+             
                   <button class="character__action btn">habla</button>
                   <button class="character__action btn">muere</button>
 
