@@ -1,24 +1,37 @@
 import personajes from "./personajes.js";
+import Component from "./components/Component.js";
 
 const allGotCharacters = personajes;
 
-const mainDiv = document.createElement("div");
-const mainDivParent = document.body;
-mainDiv.className = "app container";
-mainDivParent.prepend(mainDiv);
-
-const characterList = document.createElement("ul");
-characterList.className = "characters-list row list-unstyled";
-mainDiv.appendChild(characterList);
+// eslint-disable-next-line no-new
+new Component("", document.body, "div", "app Container");
+// eslint-disable-next-line no-new
+new Component(
+  "",
+  document.querySelector(".Container"),
+  "ul",
+  "characters-list row list-unstyled"
+);
 
 allGotCharacters.forEach((character) => {
-  const characterListElement = document.createElement("li");
-  characterListElement.className = "character col";
-  characterList.appendChild(characterListElement);
+  // eslint-disable-next-line no-new
+  new Component(
+    "",
+    document.querySelector(".characters-list"),
+    "li",
+    "character col"
+  );
+
+  // eslint-disable-next-line no-new
+  new Component(
+    "",
+    document.querySelector(".character"),
+    "div",
+    "card character__card"
+  );
 
   const characterCardDiv = document.createElement("div");
   characterCardDiv.className = "card character__card";
-  characterListElement.appendChild(characterCardDiv);
 
   const characterImage = document.createElement("img");
   characterImage.className = "character__picture card-img-top";
